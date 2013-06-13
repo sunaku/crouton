@@ -92,6 +92,14 @@ if [ "$xmethod" = 'xephyr' ]; then
     croutonwheel $CROUTON_WHEEL_PARAMS &
 fi
 
+# Spit out the VNC link
+if [ "$xmethod" = 'vnc' ]; then
+    echo "
+VNC server launched on display ${DISPLAY%%.*}
+chrome-extension://iabmpiboiopbgfabjmgeedhcmjenhbla/index.html#address=localhost:${DISPLAY%%.*}
+" 1>&2
+fi
+
 # Launch touchegg if it is requested.
 toucheggconf='/etc/touchegg.conf'
 if [ -f "$toucheggconf" ]; then
