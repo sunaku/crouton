@@ -300,6 +300,13 @@ unmount() {
         fi
     done
 
+    # Unmount bind-mounted read-only $CHROOT from ~/Downloads/crouton-$NAME
+    localdownloads='/home/chronos/user/Downloads'
+    localchroot="$localdownloads/crouton-$NAME"
+    if mountpoint -q "$localchroot"; then
+        umount "$localchroot" && rmdir "$localchroot" || : # ignore failures
+    fi
+
     # More sync for more safety
     sync
 }
