@@ -7,7 +7,7 @@ set -e
 
 APPLICATION="${0##*/}"
 BINDIR="`dirname "\`readlink -f "$0"\`"`"
-CHROOTS="`readlink -f "$BINDIR/../chroots"`"
+CHROOTS=/home/chronos/chroots
 CREATE=''
 ENCRYPT=''
 KEYFILE=''
