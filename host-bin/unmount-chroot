@@ -8,7 +8,7 @@ set -e
 APPLICATION="${0##*/}"
 ALLCHROOTS=''
 BINDIR="`dirname "\`readlink -f "$0"\`"`"
-CHROOTS="`readlink -f "$BINDIR/../chroots"`"
+CHROOTS=/home/chronos/chroots
 EXCLUDEROOT=''
 FORCE=''
 PRINT=''

@@ -351,7 +351,7 @@ addtrap "stty echo 2>/dev/null"
 
 # Deterime directories, and fix NAME if it was not specified.
 BIN="$PREFIX/bin"
-CHROOTS="$PREFIX/chroots"
+CHROOTS=/home/chronos/chroots
 CHROOT="$CHROOTS/${NAME:="${RELEASE:-"$DEFAULTRELEASE"}"}"
 CHROOTSRC="$CHROOT"
 TARGETDEDUPFILE="$CHROOT/.crouton-targets"
